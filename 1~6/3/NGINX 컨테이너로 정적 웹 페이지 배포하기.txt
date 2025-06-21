@@ -1,0 +1,41 @@
+1. 웹 페이지 파일 준비하기
+
+NGINX 컨테이너에 폴더 연결해서 실행
+ docker run --name my-nginx -v 
+/c/Users/yuuki/GitProject/Pythonstudy/3:/usr/share/nginx/html:ro -p 8080:80 -d nginx
+
+📝 설명:
+-v: 로컬의 my-nginx-site 폴더를 컨테이너 내부 /usr/share/nginx/html에 연결
+
+:ro: 읽기 전용
+
+-p 8080:80: 내 PC의 8080 포트를 컨테이너의 80포트로 연결
+
+-d: 백그라운드 실행
+
+
+로그확인 
+docker logs my-nginx
+
+컨테이너 내부 확인 
+docker exec -it my-nginx ls /usr/share/nginx/html
+
+컨테이너 정리 후 재실행
+docker stop my-nginx
+docker rm my-nginx
+
+도커 내부 index파일 확인
+docker exec -it my-nginx cat /usr/share/nginx/html/index.html
+
+캐시지우기 : 브라우저에서 새로고침할 때 Ctrl + F5 (강력 새로고침)
+해결.
+
+-v "C:\Users\yuuki\GitProject\Pythonstudy\3":/usr/share/nginx/html:ro
+왼쪽: "C:\Users\yuuki\GitProject\Pythonstudy\3" → 네 PC의 실제 폴더
+
+오른쪽: /usr/share/nginx/html → NGINX가 웹파일을 읽는 기본 폴더
+
+:ro → 읽기 전용(read-only) 으로 마운트한다는 뜻
+
+즉, 도커 안에서 파일이 존재하는 것처럼 보이지만, 실제로는 네 PC의 파일을 그대로 참조하고 있는 것
+

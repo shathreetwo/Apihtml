@@ -1,0 +1,46 @@
+✅ Day 1: Python API 실습 + JSON 처리
+📌 목표
+requests로 외부 API 호출
+
+응답(JSON) 파싱 후 필요한 정보 추출
+
+
+정해진 형식(URL 규칙)에 맞춰 요청을 보내면, 서버가 JSON 형식으로 데이터를 응답해주는 구조
+이게 REST API의 기본 원리임.
+
+크롤링 (웹 스크래핑) : 웹페이지(HTML)를 직접 긁어서 데이터 추출	
+API 연동 : 서버가 제공하는 인터페이스(URL)로 요청 보내서 JSON 등 받기
+
+공공데이터포털
+대한민국 정부가 공개하는 실제 공공 데이터 API를 제공
+(기상, 교통, 보건, 환경 등 다양)
+
+https://www.data.go.kr/index.do
+
+공공데이터포털 api 가져오기에서 오류발생. 
+알맞은 형식의 url인데 가져오지 못하고 오류가 뜬다. 
+
+SSL 핸드쉐이크 오류 (SSLV3_ALERT_ILLEGAL_PARAMETER)로,
+Python이 서버와 HTTPS 연결을 맺지 못하는 경우 발생합니다.
+
+requests 라이브러리에 강제로 낮은 보안 수준 적용 (SSL 보안 수준 낮추기)
+ctx.set_ciphers('DEFAULT@SECLEVEL=1')  # 핵심 설정
+해결.
+
+
+리스폰 
+{
+          "imageUrl4": "https://www.airkorea.or.kr/file/proxyImage?fileName=2025/06/19/23/09km/AQF.20250619.NIER_09_01.PM2P5.1hsp.2025061921.png",
+          "informCode": "PM10",
+          "imageUrl5": "https://www.airkorea.or.kr/file/proxyImage?fileName=2025/06/19/23/09km/AQF.20250619.NIER_09_01.PM2P5.1hsp.2025062003.png",
+          "imageUrl6": "https://www.airkorea.or.kr/file/proxyImage?fileName=2025/06/19/23/09km/AQF.20250619.NIER_09_01.PM2P5.1hsp.2025062009.png",
+          "actionKnack": null,
+          "informCause": "○ [미세먼지] 원활한 대기 확산으로 대기질이 대체로 '보통' 수준일 것으로 예상됩니다.",
+          "informOverall": "○ [미세먼지] 전 권역이 '좋음'∼'보통'으로 예상됩니다.",
+          "informData": "2025-06-19",
+          "informGrade": "서울 : 보통,제주 : 좋음,전남 : 좋음,전북 : 좋음,광주 : 좋음,경남 : 좋음,경북 : 보통,울산 : 보통,대구 : 보통,부산 : 좋음,충남 : 좋음,충북 : 보통,세종 : 보통,대전 : 좋음,영동 : 좋음,영서 : 보통,경기남부 : 보통,경기북부 : 보통,인천 : 보통",
+          "dataTime": "2025-06-19 23시 발표",
+          "imageUrl3": "https://www.airkorea.or.kr/file/proxyImage?fileName=2025/06/19/23/09km/AQF.20250619.NIER_09_01.PM10.1hsp.2025062009.png",
+          "imageUrl2": "https://www.airkorea.or.kr/file/proxyImage?fileName=2025/06/19/23/09km/AQF.20250619.NIER_09_01.PM10.1hsp.2025062003.png",
+          "imageUrl1": "https://www.airkorea.or.kr/file/proxyImage?fileName=2025/06/19/23/09km/AQF.20250619.NIER_09_01.PM10.1hsp.2025061921.png"
+        },

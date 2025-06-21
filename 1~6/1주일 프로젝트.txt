@@ -1,0 +1,13 @@
+날짜	학습 주제
+Day 1~2	Python API 실습 + 데이터 파싱
+v
+Day 3	Docker 설치 + NGINX 컨테이너 띄우기
+v
+Day 4	Git 기본 연습 + 개인 리포지토리 실습
+v
+Day 5	Linux 명령어 + 로그 확인 실습
+v
+Day 6	Jira 계정 생성 + 이슈 등록 연습
+v
+Day 7	복습 + 간단한 연습 프로젝트 하나 완성
+v

@@ -1,0 +1,87 @@
+WSL 터미널에서 리눅스 기본 명령어 익히기
+
+시스템 로그 (dmesg, journalctl, /var/log) 확인해보기
+
+WSL 실행
+powershell
+wsl
+
+WSL 설치 확인 
+wsl --list --verbose
+
+리눅스 기본 확인 명령어 (WSL 진입 후)
+# 현재 경로
+pwd
+
+# 현재 사용자
+whoami
+
+# 현재 디렉토리의 파일 목록
+ls -al
+
+# 시스템 정보
+uname -a
+
+# 메모리 사용량
+free -h
+
+# 디스크 사용량
+df -h
+
+WSL 내부에서의 개발 디렉토리 이동 및 Python 실행 환경 점검
+
+WSL에서 개발 디렉토리 접근 
+C:\Users\yuuki\GitProject\Pythonstud일때, 
+cd /mnt/c/Users/yuuki/GitProject/Pythonstudy
+
+python 설치 확인 
+python3 --version
+
+없을경우 설치 
+sudo apt update
+sudo apt install python3
+
+필요시 pip도 
+sudo apt install python3-pip
+
+pip는 Python 패키지 관리자. 
+Python에서 외부 라이브러리나 모듈을 설치할 수 있게 도와주는 도구
+
+파이썬 스크립트 실행. 
+python3 requests로\ 공공데이터포털\ API\ 호출.py
+
+
+Linux 명령어 + 로그 확인
+파일 및 디렉토리 관련
+ls -l         # 현재 디렉토리 자세히 보기
+pwd           # 현재 위치 확인
+cd /etc       # 디렉토리 이동
+mkdir testdir # 디렉토리 만들기
+touch test.txt # 빈 파일 만들기
+rm test.txt    # 파일 삭제
+rmdir testdir  # 빈 디렉토리 삭제
+
+시스템 정보 확인
+uname -a        # 시스템 커널 정보
+df -h           # 디스크 사용량 확인
+top             # 실시간 프로세스
+ps aux | grep bash  # 프로세스 목록에서 bash 관련 검색
+
+로그 파일 보기
+WSL에서도 대부분의 리눅스 시스템과 같이 로그는 /var/log 경로
+cd /var/log
+ls -l
+
+syslog 또는 messages: 시스템 로그
+auth.log: 인증 관련 로그
+dmesg: 부팅 관련 커널 로그
+
+ 로그 파일 내용 보기
+cat syslog              # 전체 출력
+tail -n 50 syslog       # 마지막 50줄
+less syslog             # 스크롤 하며 보기
+grep "error" syslog     # 에러 키워드 검색
+
+파일에 내용을 쓸 때 (> 또는 >> 사용)
+>는 기존 내용을 덮어쓰기
+>>는 기존 내용 유지하고 덧붙이기

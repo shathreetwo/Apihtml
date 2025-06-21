@@ -1,0 +1,51 @@
+Jira 가입하기
+https://www.atlassian.com/software/jira
+
+추천 템플릿
+✅ 스크럼 보드 (Scrum 보드)
+사용 목적: 짧은 기간 내 명확한 작업 목표를 정하고 반복(Sprint)하며 개발할 때 사용
+
+추천: 학습 실습용, 간단한 프로젝트 관리에 딱 좋아
+
+✅ 칸반 보드 (Kanban 보드)
+사용 목적: 작업 흐름을 지속적으로 관리할 때 유용
+
+추천: 할 일들을 쭉쭉 관리하고 싶을 때
+
+스크럼
+Python API 실습 프로젝트
+키 : PA
+
+Day 6 Jira 실습 미션
+이슈 생성
+
+Create issue 버튼 클릭
+
+아래 내용을 입력해:
+
+Summary: API 실습 정리
+
+Description: 공공데이터 API 호출 및 파싱 실습 내용을 기록하고, 정리한다.
+
+Issue type: Task
+
+Priority: Medium
+
+상태 변경 실습
+
+생성된 이슈를 To Do → In Progress → Done 순서로 옮겨보기 (드래그로 가능)
+
+스프린트 만들기
+
+백로그(Backlog)에서 Create Sprint 클릭
+
+이름: Day 6 실습
+
+설명: Jira 사용법 익히기, 이슈 등록 및 상태 변경 실습
+
+이슈를 드래그해서 스프린트에 넣기
+
+Start Sprint 클릭 (기간은 1일로 지정해도 됨)
+
+넣은 작업이  보드탭 해야할 일에 들어가있다. 
+진행중, 완료 탭으로 이동 가능

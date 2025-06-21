@@ -1,0 +1,37 @@
+목표
+localhost:8080에서 미세먼지 예보 정보를 보여주는 정적 웹페이지 구현
+
+미세먼지 API → HTML 생성 → Docker로 웹서비스
+
+
+도커 켜고, 시작하기.
+
+docker stop my-nginx
+docker rm my-nginx
+
+docker run --name my-nginx -v "C:\Users\yuuki\GitProject\Pythonstudy\7":/usr/share/nginx/html:ro -p 8080:80 -d nginx
+
+http://localhost:8080접속. 
+
+
+
+도커 사용 가능 조건
+Docker Desktop 실행 중이어야 함 (Windows에선 백그라운드로 동작)
+
+명령어로 docker ps 같은 걸 입력했을 때 정상 응답이 나와야 함
+
+
+구성	의미
+docker run	새로운 컨테이너를 생성하고 실행하는 명령어
+--name my-nginx	생성될 컨테이너 이름을 my-nginx로 설정
+-v "C:\Users\yuuki\GitProject\Pythonstudy\3":/usr/share/nginx/html:ro	로컬 폴더(C:\...)를 컨테이너 내 /usr/share/nginx/html에 읽기 전용(RO) 으로 마운트함
+-p 8080:80	로컬 PC의 8080 포트를 컨테이너의 80번 포트(기본 NGINX 포트)에 연결 (→ http://localhost:8080 으로 접속 가능)
+-d	백그라운드에서 컨테이너 실행 (detached mode)
+nginx	사용할 이미지 이름 (도커 허브에서 nginx 최신 이미지를 사용)
+
+
+명령어	설명
+docker ps	현재 실행 중인 컨테이너 목록 보기
+docker ps -a	정지된 것까지 포함한 전체 컨테이너 보기
+docker start my-nginx	정지된 my-nginx 컨테이너 시작
+docker restart my-nginx	컨테이너를 재시작 (중지 + 시작)
