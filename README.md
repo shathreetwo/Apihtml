@@ -7,4 +7,4 @@ Python 스크립트로 index.html 자동 생성
 
 docker run으로 HTML을 서비스하는 NGINX 컨테이너 실행
 
-[미세먼지 예보](https://shathreetwo.github.io/Apihtml/) 에서 웹페이지 확인 가능
+[링크](https://shathreetwo.github.io/Apihtml/) 에서 웹페이지 확인 가능
